@@ -1,0 +1,607 @@
+/* =========================================================
+   MODERN FORM STYLING - CHABADONE
+   Target: The Jews are Back RSVP Form (ID: 7382223)
+   Theme: Shavuot Minisite Style (Blue #2f7086)
+========================================================= */
+
+/* --- 0. CRUCIAL: Enforce Jotform Conditional Logic First --- */
+/* This MUST be here so the JS can hide/show the CC and Check fields */
+form[id="7382223"] .hide,
+form[id="7382223"] tr.hide,
+form[id="7382223"] td.hide,
+form[id="7382223"] div.hide,
+form[id="7382223"] tbody.hide {
+    display: none !important;
+}
+
+/* --- 1. Global Form Reset & Typography --- */
+form[id="7382223"] {
+    font-family: 'Montserrat', 'Open Sans', Arial, sans-serif !important;
+    color: #333 !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+form[id="7382223"] .form-all {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Form Line */
+form[id="7382223"] .form-line {
+    display: block !important; /* GUARANTEES STACKING */
+    padding: 12px 0 !important; /* Tighter vertical spacing */
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* CRITICAL: Respect Jotform's inline conditional hiding */
+form[id="7382223"] .form-line[style*="none"] {
+    display: none !important;
+}
+
+/* --- 2. Labels (FORCED ON TOP) --- */
+form[id="7382223"] .form-label,
+form[id="7382223"] .form-label-left,
+form[id="7382223"] .form-label-right,
+form[id="7382223"] .form-label-top {
+    color: #2f7086 !important; 
+    font-weight: 700 !important;
+    font-size: 18px !important; 
+    margin-bottom: 8px !important; 
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    float: none !important; /* Kills the side-by-side float */
+    clear: both !important; /* Forces label completely above field */
+}
+
+form[id="7382223"] .form-sub-label {
+    color: #8b8b8b !important;
+    font-size: 13px !important;
+    margin-top: 5px !important;
+    font-weight: normal !important;
+}
+
+/* --- 3. Inputs (Text, Select, Phone) --- */
+form[id="7382223"] .form-input,
+form[id="7382223"] .form-input-wide {
+    clear: both !important; /* Forces fields under the labels */
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+form[id="7382223"] .form-textbox,
+form[id="7382223"] .form-dropdown,
+form[id="7382223"] .form-textarea {
+    width: 100% !important;
+    height: 50px !important; /* Tall, modern fields */
+    padding: 0 15px !important; 
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    color: #333 !important;
+    font-style: normal !important; 
+    background-color: #fff !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+form[id="7382223"] .form-textarea {
+    height: auto !important;
+    padding: 15px !important; 
+}
+
+form[id="7382223"] .form-textbox:focus,
+form[id="7382223"] .form-dropdown:focus {
+    border-color: #2f7086 !important;
+    box-shadow: 0 0 0 2px rgba(47, 112, 134, 0.2) !important;
+}
+
+/* --- 4. Layout: Side-by-Side Flex --- */
+/* Sub-labels (First/Last Name AND Area/Phone Code) */
+form[id="7382223"] #cid_1,
+form[id="7382223"] #cid_14 .dir_ltr {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+form[id="7382223"] .form-sub-label-container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    margin: 0 !important;
+}
+/* Reorder so sub-label is under the input naturally */
+form[id="7382223"] .form-sub-label-container input,
+form[id="7382223"] .form-sub-label-container select { order: 1 !important; }
+form[id="7382223"] .form-sub-label-container label.form-sub-label { order: 2 !important; }
+
+/* Address Block */
+form[id="7382223"] .form-address-table { width: 100% !important; display: block !important; }
+form[id="7382223"] .form-address-table tbody { display: flex !important; flex-direction: column !important; gap: 10px !important; width: 100% !important; }
+form[id="7382223"] .form-address-table tr:not(.hide) { display: flex !important; flex-direction: row !important; gap: 15px !important; width: 100% !important; }
+form[id="7382223"] .form-address-table td { display: flex !important; flex-direction: column !important; flex: 1 !important; padding: 0 !important; }
+
+/* --- 5. Radio Buttons & Checkboxes (100% Clickable Area) --- */
+form[id="7382223"] .form-single-column,
+form[id="7382223"] .form-multiple-column {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+/* Payment split into two columns with a gap! */
+form[id="7382223"] .form-payment-methods {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+form[id="7382223"] .form-payment-methods .form-radio-item {
+    flex: 1 !important;
+    margin: 0 !important;
+}
+
+/* The Wrapper Box (0 padding to allow children to stretch) */
+form[id="7382223"] .form-radio-item,
+form[id="7382223"] .form-checkbox-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important; /* Children fill the height natively */
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    padding: 0 !important; /* Zero padding! */
+    margin: 0 !important;
+    background: #fff !important;
+    transition: all 0.2s ease !important;
+    min-height: 54px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* ACTIVE STATE (Stays blue when checked) */
+form[id="7382223"] .form-radio-item:has(input:checked),
+form[id="7382223"] .form-checkbox-item:has(input:checked) {
+    background-color: #eaf3f5 !important;
+    border-color: #2f7086 !important;
+}
+
+/* The actual tick-box input */
+form[id="7382223"] input.form-radio,
+form[id="7382223"] input.form-checkbox,
+form[id="7382223"] input.form-checkbox-other {
+    margin: 0 0 0 20px !important; /* Spacer on left only */
+    align-self: center !important; /* Center vertically in the box */
+    width: 20px !important;
+    height: 20px !important;
+    accent-color: #2f7086 !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important; 
+    opacity: 1 !important;
+    z-index: 2 !important;
+}
+
+/* The Label Text (Holds the padding to make the whole edge clickable) */
+form[id="7382223"] .form-radio-item label,
+form[id="7382223"] .form-checkbox-item label {
+    margin: 0 !important;
+    padding: 15px 20px 15px 15px !important; /* Padding moved here */
+    color: #333 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    flex: 1 !important; /* Stretch to fill container */
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
+}
+
+/* "Other" Checkbox Fixes (REVERTED TO SAFE NATIVE BEHAVIOR) */
+form[id="7382223"] .form-checkbox-item:has(.form-checkbox-other) span { 
+    display: flex !important; 
+    align-items: center !important; 
+    flex: none !important; 
+    padding: 0 !important;
+    margin-left: 10px !important;
+}
+form[id="7382223"] .form-checkbox-other-input {
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    height: auto !important;
+    width: 130px !important; /* Sensible fixed width */
+    max-width: none !important; 
+    font-size: 15px !important;
+    background: #fff !important;
+    cursor: text !important;
+    display: block !important;
+}
+/* Removes focus ring from outer box when typing "Other" */
+form[id="7382223"] .form-checkbox-item:has(.form-checkbox-other-input:focus) {
+    border-color: #ccc !important;
+    box-shadow: none !important;
+}
+
+/* --- 6. The Shavuot Spinner (- | input | +) --- */
+/* Hide native browser arrows */
+form[id="7382223"] .form-spinner-input::-webkit-outer-spin-button,
+form[id="7382223"] .form-spinner-input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+form[id="7382223"] .form-spinner-input {
+    -moz-appearance: textfield !important;
+}
+
+/* 1. Wipeout native table spacing that creates ugly gaps/double borders */
+form[id="7382223"] table.form-spinner {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+form[id="7382223"] table.form-spinner tbody,
+form[id="7382223"] table.form-spinner tr,
+form[id="7382223"] table.form-spinner td {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 2. Absolute Positioning Strategy (Restored & Perfected) */
+form[id="7382223"] table.form-spinner {
+    display: block !important;
+    width: 150px !important;
+    height: 50px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+}
+
+/* The Wrapper for the Input */
+form[id="7382223"] .form-spinner-input-td {
+    display: block !important;
+    position: absolute !important;
+    left: 45px !important; /* Space for minus */
+    right: 45px !important; /* Space for plus */
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    width: auto !important;
+}
+
+/* Minus Button */
+form[id="7382223"] .form-spinner-down {
+    display: flex !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 45px !important;
+    height: 100% !important;
+    background: #eaf3f5 !important;
+    border-right: 1px solid #ccc !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 5 !important;
+    box-sizing: border-box !important;
+}
+
+/* Plus Button */
+form[id="7382223"] .form-spinner-up {
+    display: flex !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 45px !important;
+    height: 100% !important;
+    background: #eaf3f5 !important;
+    border-left: 1px solid #ccc !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 5 !important;
+    box-sizing: border-box !important;
+}
+
+/* Button Hovers */
+form[id="7382223"] .form-spinner-down:hover,
+form[id="7382223"] .form-spinner-up:hover {
+    background: #dcebf0 !important;
+}
+
+/* The actual number field */
+form[id="7382223"] .form-spinner-input {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+}
+
+/* Hide default arrows, inject large text */
+form[id="7382223"] .form-spinner-down img,
+form[id="7382223"] .form-spinner-up img {
+    display: none !important;
+}
+form[id="7382223"] .form-spinner-down::after {
+    content: '-';
+    font-size: 28px;
+    color: #2f7086;
+    font-weight: 300;
+    line-height: 1;
+    margin-top: -4px;
+}
+form[id="7382223"] .form-spinner-up::after {
+    content: '+';
+    font-size: 26px;
+    color: #2f7086;
+    font-weight: 300;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+/* --- 7. Total Amount Box (Screenshot Style) --- */
+form[id="7382223"] #cid_7 {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: #f8f8fa !important;
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    padding: 20px 25px !important;
+    margin-top: 10px !important;
+}
+form[id="7382223"] #cid_7 label { 
+    margin: 0 !important; 
+    font-size: 18px !important; 
+    font-weight: 700 !important; 
+    color: #333 !important;
+}
+form[id="7382223"] #total_amount { 
+    font-size: 26px !important; 
+    font-weight: 800 !important; 
+    color: #2f7086 !important; 
+    padding: 0 !important; 
+}
+
+/* --- 8. Payment / Credit Card Fields --- */
+form[id="7382223"] .js-cc-number { padding-left: 15px !important; background-image: none !important; }
+
+/* Keep the inner rows tight while respecting outer hide */
+form[id="7382223"] .credit_card:not(.hide) > td > table { 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important; 
+    border: 1px solid #ccc !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    background: #fafafa !important;
+    margin-top: 15px !important;
+}
+form[id="7382223"] .credit_card:not(.hide) > td > table > tbody { display: flex !important; flex-direction: column !important; gap: 15px !important; width: 100% !important;}
+form[id="7382223"] .credit_card:not(.hide) > td > table > tbody > tr { 
+    display: flex !important; 
+    flex-direction: row !important;
+    width: 100% !important; 
+    gap: 15px !important; 
+}
+form[id="7382223"] .credit_card td, form[id="7382223"] .cc-field-wrapper { display: flex !important; flex-direction: column !important; flex: 1 !important; padding: 0 !important; }
+form[id="7382223"] .credit_card th { display: none !important; }
+form[id="7382223"] .other { padding: 15px 0 0 0 !important; font-size: 15px !important; color: #555 !important; line-height: 1.5 !important; }
+
+/* --- 9. Submit Button Centered --- */
+form[id="7382223"] .form-buttons-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 30px 0 0 0 !important;
+    padding: 0 !important;
+    text-indent: 0 !important;
+}
+form[id="7382223"] .form-submit-button {
+    background-color: #2f7086 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 16px 40px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    transition: filter 0.3s ease, transform 0.1s ease !important;
+}
+form[id="7382223"] .form-submit-button:hover { filter: brightness(1.15) !important; transform: translateY(-2px) !important; }
+
+/* --- 10. News & Updates (Single Line on Left) --- */
+form[id="7382223"] #cid_4 .form-checkbox-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border: none !important;
+    background: transparent !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    overflow: visible !important; /* Prevents cutoff */
+}
+form[id="7382223"] #cid_4 .form-checkbox-item:hover {
+    background: transparent !important;
+}
+form[id="7382223"] #cid_4 input.form-checkbox {
+    margin: 0 10px 0 0 !important;
+    width: auto !important;
+    height: auto !important;
+    position: relative !important;
+    transform: scale(1.2) !important; /* Native scaling instead of fixed dimensions */
+}
+form[id="7382223"] #cid_4 label {
+    font-weight: 500 !important;
+    color: #2f7086 !important;
+    font-size: 15px !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    flex: none !important; 
+    display: inline-block !important;
+    width: auto !important;
+}
+
+/* --- Fix 2: Payment Options Side-by-Side (Desktop) --- */
+form[id="7382223"] #cid_8 .form-single-column,
+form[id="7382223"] #cid_8 .form-multiple-column,
+form[id="7382223"] #cid_8 > span {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+
+form[id="7382223"] #cid_8 .form-radio-item {
+    flex: 1 !important; /* Forces them to be equal width */
+    margin: 0 !important;
+}
+
+/* 2. Mobile Adjustments (Cleaned Up) */
+/* Emptying out the old rules guarantees Name, Phone, Address, and CC 
+   all stay side-by-side on mobile, just like on desktop. */
+@media (max-width: 600px) {
+    /* We only stack the Payment Methods on mobile so the boxes don't get squished */
+    form[id="7382223"] .form-single-column:has(input.paymentMethod),
+    form[id="7382223"] .form-multiple-column:has(input.paymentMethod) {
+        flex-direction: column !important;
+    }
+}
+/* =========================================================
+   "OTHER" CHECKBOX FIX (The 100% Hitbox Overlay)
+========================================================= */
+
+/* 1. Container Setup */
+form[id="7382223"] .form-checkbox-item:has(.form-checkbox-other) {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+}
+
+/* 2. THE MASTER TRICK: Strip native box, expand hit area to 100% */
+form[id="7382223"] input.form-checkbox-other {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    width: 100% !important; /* Hit area fills the entire container */
+    height: 100% !important;
+    cursor: pointer !important;
+    z-index: 5 !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* 3. Draw a pixel-perfect clone of the native checkmark */
+/* Unchecked State */
+form[id="7382223"] input.form-checkbox-other::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 20px !important;
+    height: 20px !important;
+    border: 1px solid #767676 !important; /* CHANGED: Thinner 1px border to match native */
+    border-radius: 3px !important; /* CHANGED: Sharper 3px corners */
+    background-color: #fff !important;
+    box-sizing: border-box !important;
+    transition: all 0.1s ease !important;
+}
+
+/* Checked State */
+form[id="7382223"] input.form-checkbox-other:checked::before {
+    background-color: #2f7086 !important;
+    border-color: #2f7086 !important;
+    /* CHANGED: Stroke-width increased to 3.5 for a bolder, native look */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8.5l3 3L12.5 4'/%3E%3C/svg%3E") !important;
+    background-size: 15px !important; /* CHANGED: Scaled up from 12px to fill the box more */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 4. Text Input Layout */
+form[id="7382223"] .form-checkbox-item:has(.form-checkbox-other) span {
+    display: flex !important;
+    align-items: center !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin-left: 55px !important; /* Clears the 20px left margin + 20px box width + 15px gap */
+    position: relative !important;
+    z-index: 10 !important; /* Keeps the text input safely ABOVE the massive checkbox */
+}
+
+/* Restored 130px Input Box */
+form[id="7382223"] .form-checkbox-other-input {
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    height: auto !important;
+    width: 130px !important; 
+    max-width: none !important;
+    font-size: 15px !important;
+    background: #fff !important;
+    cursor: text !important;
+    display: block !important;
+    position: relative !important;
+}
+
+/* =========================================================
+   CREDIT CARD FIELD SPLIT (Mobile Only)
+========================================================= */
+
+@media (max-width: 600px) {
+    /* 1. Allow the Credit Card row to wrap elements onto new lines */
+    form[id="7382223"] .credit_card:not(.hide) > td > table > tbody > tr {
+        flex-wrap: wrap !important;
+    }
+
+    /* 2. Force the CC Number container to span 100% of the row */
+    form[id="7382223"] .credit_card td:has(.js-cc-number) {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+
+    /* 3. Force the CVV container to span 100% of the row */
+    form[id="7382223"] .credit_card td:has([id*="cc_ccv"]),
+    form[id="7382223"] .credit_card td:has([name*="ccv"]),
+    form[id="7382223"] .credit_card td:has([autocomplete="cc-csc"]) {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+}
